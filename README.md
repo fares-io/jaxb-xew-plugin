@@ -25,7 +25,7 @@ All `jaxb-maven-plugin` versions ≥ 4.0.0 work with this `jaxb-xew-plugin`. For
       <plugin>
         <groupId>io.fares.bind.xjc.plugins</groupId>
         <artifactId>jaxb-xew-plugin</artifactId>
-        <version>2.1.0</version>
+        <version>2.1.1</version>
       </plugin>
     </plugins>
     <args>
