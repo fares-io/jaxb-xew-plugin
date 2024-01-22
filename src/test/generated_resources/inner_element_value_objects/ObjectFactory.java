@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the inner_element_value_objects package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -27,7 +27,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static Void _useJAXBProperties = null;
+    private static final Void _useJAXBProperties = null;
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: inner_element_value_objects
@@ -39,6 +39,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Filesystem }
      * 
+     * @return
+     *     the new instance of {@link Filesystem }
      */
     public Filesystem createFilesystem() {
         return new FilesystemImpl();
@@ -47,6 +49,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Article }
      * 
+     * @return
+     *     the new instance of {@link Article }
      */
     public Article createArticle() {
         return new ArticleImpl();
@@ -55,6 +59,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Articles }
      * 
+     * @return
+     *     the new instance of {@link Articles }
      */
     public Articles createArticles() {
         return new ArticlesImpl();
@@ -63,6 +69,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ArticlesCollections }
      * 
+     * @return
+     *     the new instance of {@link ArticlesCollections }
      */
     public ArticlesCollections createArticlesCollections() {
         return new ArticlesCollectionsImpl();
@@ -71,6 +79,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Publisher }
      * 
+     * @return
+     *     the new instance of {@link Publisher }
      */
     public Publisher createPublisher() {
         return new PublisherImpl();
@@ -79,6 +89,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Volume }
      * 
+     * @return
+     *     the new instance of {@link Volume }
      */
     public Volume createVolume() {
         return new VolumeImpl();
@@ -87,6 +99,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Filesystem.FileItem }
      * 
+     * @return
+     *     the new instance of {@link Filesystem.FileItem }
      */
     public Filesystem.FileItem createFilesystemFileItem() {
         return new FilesystemImpl.FileItemImpl();

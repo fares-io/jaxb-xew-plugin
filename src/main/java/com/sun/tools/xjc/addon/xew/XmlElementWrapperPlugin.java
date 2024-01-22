@@ -1,6 +1,6 @@
 /*
  * XmlElementWrapperPlugin.java
- * 
+ *
  * Copyright (C) 2022, Bjarne Hansen, http://www.conspicio.dk.
  * All rights reserved.
  *
@@ -80,7 +80,7 @@ import com.sun.xml.xsom.XSDeclaration;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.glassfish.jaxb.core.api.impl.NameConverter;
-import org.jvnet.jaxb2_commons.util.CustomizationUtils;
+import org.jvnet.jaxb.util.CustomizationUtils;
 
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAnyElement;
@@ -99,11 +99,11 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * The XML Element Wrapper plugin is a JAXB plugin for the XJC compiler enabling generation of "natural" Java classes
  * for handling collection types. The code generated will be annotated with {@link XmlElementWrapper} and
  * {@link XmlElement} annotations and will have no extra inner classes representing the immediate collection type.
- * 
+ *
  * @see <a href="https://github.com/dmak/jaxb-xew-plugin">plugin site</a>
  * @see <a href="http://www.conspicio.dk/blog/bjarne/jaxb-xmlelementwrapper-plugin">original plugin site</a>
  * @see <a href="http://www.conspicio.dk/projects/overview">source code and binary packages</a>
- * 
+ *
  * @author Bjarne Hansen
  * @author Dmitry Katsubo
  */
@@ -532,7 +532,7 @@ public class XmlElementWrapperPlugin extends AbstractConfigurablePlugin {
 
 	/**
 	 * Create additional factory methods with a new scope for elements that should be scoped.
-	 * 
+	 *
 	 * @param targetClass
 	 *            the class that is applied the transformation of properties
 	 * @param jaxbElementModelClass
@@ -612,7 +612,7 @@ public class XmlElementWrapperPlugin extends AbstractConfigurablePlugin {
 
 	/**
 	 * Locate the candidates classes for substitution/removal.
-	 * 
+	 *
 	 * @return list of potential candidates
 	 */
 	private Collection<Candidate> findCandidateClasses(Outline outline, JClass xmlElementsModelClass,
@@ -744,7 +744,7 @@ public class XmlElementWrapperPlugin extends AbstractConfigurablePlugin {
 	/**
 	 * Delete all candidate classes together with setter/getter methods and helper methods from
 	 * <code>ObjectFactory</code>.
-	 * 
+	 *
 	 * @return the number of deletions performed
 	 */
 	private int deleteCandidates(Outline outline, Collection<Candidate> candidates) {
@@ -810,7 +810,7 @@ public class XmlElementWrapperPlugin extends AbstractConfigurablePlugin {
 
 	/**
 	 * Remove method {@code ObjectFactory} that creates an object of a given {@code clazz}.
-	 * 
+	 *
 	 * @return {@code 1} if such method was successfully located and removed
 	 */
 	private int deleteFactoryMethod(JDefinedClass factoryClass, Candidate candidate) {
@@ -978,7 +978,7 @@ public class XmlElementWrapperPlugin extends AbstractConfigurablePlugin {
 
 			if (type == null) {
 				// Can be the case for @XmlElement(name = "publication-reference", namespace = "http://mycompany.org/exchange")
-				// or any other annotation without "type" 
+				// or any other annotation without "type"
 				continue;
 			}
 

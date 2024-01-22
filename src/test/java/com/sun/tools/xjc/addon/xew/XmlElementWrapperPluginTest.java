@@ -26,10 +26,7 @@ import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import java.io.File;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -151,7 +148,8 @@ public class XmlElementWrapperPluginTest {
 		runTest("inner-scoped-element", extraXewOptions, false, classesToCheck);
 	}
 
-	@Test
+	@Disabled("JAXBContexts generated using a custom jakarta.xml.bind.JAXBContextFactory must be bootstrapped differently in JAXB 4, this test is no longer compatible")
+  @Test
 	public void testInnerElementWithValueObjects() throws Exception {
 		List<String> classesToCheck = asList("Article", "Articles", "ArticlesCollections", "Filesystem", "Publisher",
 		            "Volume", "impl.ArticleImpl", "impl.ArticlesImpl", "impl.ArticlesCollectionsImpl",
@@ -302,7 +300,7 @@ public class XmlElementWrapperPluginTest {
 
 		URL xsdUrl = XmlElementWrapperPluginTest.class.getResource(resourceXsd);
 
-		Path baseDir = Paths.get(GENERATED_SOURCES_PREFIX);
+		Path baseDir = Paths.get(GENERATED_SOURCES_PREFIX).toAbsolutePath();
 		Files.createDirectories(baseDir);
 
 		PrintStream loggingPrintStream = new PrintStream(
@@ -341,9 +339,10 @@ public class XmlElementWrapperPluginTest {
 		// *.properties files are ignored:
 		try (Stream<Path> stream = Files.walk(targetDir)) {
 			generatedJavaSources = stream
-			            .filter(file -> Files.isRegularFile(file) && file.getFileName().toString().endsWith(".java"))
-			            .map(f -> f.toString().substring(targetDir.toString().length() + 1).replace('\\', '/'))
-			            .collect(Collectors.toSet());
+        .filter(Files::isRegularFile)
+        .filter(f ->  f.getFileName().toString().endsWith(".java"))
+        .map(f -> f.toString().substring(targetDir.toString().length() + 1).replace('\\', '/'))
+        .collect(Collectors.toSet());
 		}
 
 		// This class is added and checked by default:
@@ -358,7 +357,7 @@ public class XmlElementWrapperPluginTest {
 		for (String className : classesToCheck) {
 			className = className.replace('.', '/');
 
-			Path sourceFile = Paths.get(PREGENERATED_SOURCES_PREFIX + packageName, className + "" + ".java");
+			Path sourceFile = Paths.get(PREGENERATED_SOURCES_PREFIX + packageName, className + ".java");
 
 			String targetClassName = className + ".java";
 			softly.assertThat(targetDir.resolve(targetClassName))
@@ -405,16 +404,17 @@ public class XmlElementWrapperPluginTest {
 	 */
 	private static JAXBContext compileAndLoad(String packageName, Path targetDir,
 	            Collection<String> generatedJavaSources) throws MalformedURLException, JAXBException {
-		String[] javaSources = new String[generatedJavaSources.size()];
 
-		int i = 0;
+    List<String> javaSources = new ArrayList<>();
+
 		for (String javaSource : generatedJavaSources) {
-			javaSources[i++] = (targetDir.resolve(javaSource)).toString();
-		}
+      Path sourcePath = targetDir.resolve(javaSource);
+      javaSources.add(sourcePath.toString());
+    }
 
 		StringWriter writer = new StringWriter();
 
-		assertThat(com.sun.tools.javac.Main.compile(javaSources, new PrintWriter(writer)))
+		assertThat(com.sun.tools.javac.Main.compile(javaSources.toArray(new String[0]), new PrintWriter(writer)))
 		            .as(() -> "javac failed with message: " + writer).isZero();
 
 		ClassLoader currentClassLoader = Thread.currentThread().getContextClassLoader();

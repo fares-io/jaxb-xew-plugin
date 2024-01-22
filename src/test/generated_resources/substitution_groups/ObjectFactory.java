@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the substitution_groups package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,10 +24,10 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Customer_QNAME = new QName("", "customer");
-    private final static QName _ContactInfo_QNAME = new QName("", "contact-info");
-    private final static QName _Address_QNAME = new QName("", "address");
-    private final static QName _PhoneNumber_QNAME = new QName("", "phone-number");
+    private static final QName _Customer_QNAME = new QName("", "customer");
+    private static final QName _ContactInfo_QNAME = new QName("", "contact-info");
+    private static final QName _Address_QNAME = new QName("", "address");
+    private static final QName _PhoneNumber_QNAME = new QName("", "phone-number");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: substitution_groups
@@ -39,6 +39,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Customer }
      * 
+     * @return
+     *     the new instance of {@link Customer }
      */
     public Customer createCustomer() {
         return new Customer();
@@ -47,6 +49,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Address }
      * 
+     * @return
+     *     the new instance of {@link Address }
      */
     public Address createAddress() {
         return new Address();
@@ -55,6 +59,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PhoneNumber }
      * 
+     * @return
+     *     the new instance of {@link PhoneNumber }
      */
     public PhoneNumber createPhoneNumber() {
         return new PhoneNumber();
@@ -70,7 +76,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "customer")
     public JAXBElement<Customer> createCustomer(Customer value) {
-        return new JAXBElement<Customer>(_Customer_QNAME, Customer.class, null, value);
+        return new JAXBElement<>(_Customer_QNAME, Customer.class, null, value);
     }
 
     /**
@@ -83,7 +89,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "contact-info")
     public JAXBElement<ContactInfo> createContactInfo(ContactInfo value) {
-        return new JAXBElement<ContactInfo>(_ContactInfo_QNAME, ContactInfo.class, null, value);
+        return new JAXBElement<>(_ContactInfo_QNAME, ContactInfo.class, null, value);
     }
 
     /**
@@ -96,7 +102,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "address", substitutionHeadNamespace = "", substitutionHeadName = "contact-info")
     public JAXBElement<Address> createAddress(Address value) {
-        return new JAXBElement<Address>(_Address_QNAME, Address.class, null, value);
+        return new JAXBElement<>(_Address_QNAME, Address.class, null, value);
     }
 
     /**
@@ -109,7 +115,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "phone-number", substitutionHeadNamespace = "", substitutionHeadName = "contact-info")
     public JAXBElement<PhoneNumber> createPhoneNumber(PhoneNumber value) {
-        return new JAXBElement<PhoneNumber>(_PhoneNumber_QNAME, PhoneNumber.class, null, value);
+        return new JAXBElement<>(_PhoneNumber_QNAME, PhoneNumber.class, null, value);
     }
 
 }

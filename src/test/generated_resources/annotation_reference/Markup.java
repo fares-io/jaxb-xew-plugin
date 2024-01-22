@@ -12,23 +12,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for markup complex type.
+ * <p>Java class for markup complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="markup"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
- *         &lt;element ref="{}br"/&gt;
- *         &lt;element ref="{}page"/&gt;
- *         &lt;element ref="{}para"/&gt;
- *       &lt;/choice&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="markup">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <choice maxOccurs="unbounded" minOccurs="0">
+ *         <element ref="{}br"/>
+ *         <element ref="{}page"/>
+ *         <element ref="{}para"/>
+ *       </choice>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -48,16 +48,16 @@ public class Markup {
     /**
      * Gets the value of the brOrPageOrPara property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the brOrPageOrPara property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the brOrPageOrPara property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getBrOrPageOrPara().add(newItem);
+     * getBrOrPageOrPara().add(newItem);
      * </pre>
      * 
      * 
@@ -66,12 +66,15 @@ public class Markup {
      * {@link Para }
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the brOrPageOrPara property.
      */
     public List<Object> getBrOrPageOrPara() {
         if (brOrPageOrPara == null) {
-            brOrPageOrPara = new ArrayList<Object>();
+            brOrPageOrPara = new ArrayList<>();
         }
         return this.brOrPageOrPara;
     }

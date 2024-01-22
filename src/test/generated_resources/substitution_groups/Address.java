@@ -8,21 +8,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for addressType complex type.
+ * <p>Java class for addressType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="addressType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{}contactInfoType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="addressType">
+ *   <complexContent>
+ *     <extension base="{}contactInfoType">
+ *       <sequence>
+ *         <element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       </sequence>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

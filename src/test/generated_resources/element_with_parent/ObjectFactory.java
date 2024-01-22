@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the element_with_parent package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,6 +32,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Group }
      * 
+     * @return
+     *     the new instance of {@link Group }
      */
     public Group createGroup() {
         return new Group();
@@ -40,6 +42,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Alliance }
      * 
+     * @return
+     *     the new instance of {@link Alliance }
      */
     public Alliance createAlliance() {
         return new Alliance();
@@ -48,6 +52,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Organization }
      * 
+     * @return
+     *     the new instance of {@link Organization }
      */
     public Organization createOrganization() {
         return new Organization();
@@ -56,6 +62,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Group.Person }
      * 
+     * @return
+     *     the new instance of {@link Group.Person }
      */
     public Group.Person createGroupPerson() {
         return new Group.Person();

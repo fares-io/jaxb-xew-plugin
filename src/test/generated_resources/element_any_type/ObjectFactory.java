@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the element_any_type package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _EntryKey_QNAME = new QName("", "key");
-    private final static QName _EntryValue_QNAME = new QName("", "value");
+    private static final QName _EntryKey_QNAME = new QName("", "key");
+    private static final QName _EntryValue_QNAME = new QName("", "value");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: element_any_type
@@ -37,6 +37,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Conversion }
      * 
+     * @return
+     *     the new instance of {@link Conversion }
      */
     public Conversion createConversion() {
         return new Conversion();
@@ -45,6 +47,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Entry }
      * 
+     * @return
+     *     the new instance of {@link Entry }
      */
     public Entry createEntry() {
         return new Entry();
@@ -60,7 +64,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "key", scope = Entry.class)
     public JAXBElement<Object> createEntryKey(Object value) {
-        return new JAXBElement<Object>(_EntryKey_QNAME, Object.class, Entry.class, value);
+        return new JAXBElement<>(_EntryKey_QNAME, Object.class, Entry.class, value);
     }
 
     /**
@@ -73,7 +77,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "value", scope = Entry.class)
     public JAXBElement<Object> createEntryValue(Object value) {
-        return new JAXBElement<Object>(_EntryValue_QNAME, Object.class, Entry.class, value);
+        return new JAXBElement<>(_EntryValue_QNAME, Object.class, Entry.class, value);
     }
 
 }

@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the element_with_customization package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,6 +32,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PostOffice }
      * 
+     * @return
+     *     the new instance of {@link PostOffice }
      */
     public PostOffice createPostOffice() {
         return new PostOffice();
@@ -40,6 +42,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Args }
      * 
+     * @return
+     *     the new instance of {@link Args }
      */
     public Args createArgs() {
         return new Args();

@@ -16,7 +16,7 @@ import com.sun.tools.xjc.outline.Outline;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.logging.LogFactory;
-import org.jvnet.jaxb2_commons.plugin.AbstractParameterizablePlugin;
+import org.jvnet.jaxb.plugin.AbstractParameterizablePlugin;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.xml.sax.ErrorHandler;
@@ -105,12 +105,12 @@ public abstract class AbstractConfigurablePlugin extends AbstractParameterizable
 	/**
 	 * Parse argument at a given index and apply it to global configuration. Option value may go within the same
 	 * argument (separated with equals), or as a following argument.
-	 * 
+	 *
 	 * @param args
 	 *            list of arguments
 	 * @param index
 	 *            current index
-	 * @param optionName
+	 * @param option
 	 *            the option to match
 	 * @return number of arguments processed
 	 */
@@ -144,7 +144,7 @@ public abstract class AbstractConfigurablePlugin extends AbstractParameterizable
 
 	/**
 	 * Parse and apply plugin configuration options.
-	 * 
+	 *
 	 * @return number of consumed argument options
 	 */
 	@Override
